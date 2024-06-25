@@ -1,24 +1,27 @@
 import { useState } from "react";
 import FormLogin from "../components/Forms/FormLogin";
 import { useAuth } from "../contexts/AuthContext";
+import Alert from "../components/Alert/Alert";
 
 const Login = () => {
     const { login } = useAuth();
 
     const [loginError, setLoginError] = useState(null);
-
+    const [alertOpen, setAlertOpen] = useState(false);
 
     const handleLogin = async (formData) => {
+        setLoginError(null);
         try {
             await login(formData);
         } catch (err) {
-            setLoginError(err)
-            console.error(err);
+            setLoginError(err);
+            setAlertOpen(true);
         }
     }
 
     return (
         <section className="container">
+            {alertOpen && <Alert errors={loginError?.message} closeAlert={() => setAlertOpen(false)} />}
             <FormLogin submitForm={handleLogin} />
         </section>
     )

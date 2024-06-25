@@ -16,7 +16,6 @@ const FormLogin = ({ submitForm }) => {
     const handleSubmit = e => {
         e.preventDefault();
         submitForm(formData);
-        setFormData(initialData);
     }
 
     return (
