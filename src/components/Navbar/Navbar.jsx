@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 
 const Navbar = () => {
 
-    const { isLoggedIn, logout } = useAuth();
+    const { isLoggedIn } = useAuth();
 
     return (
         <header>
@@ -18,7 +18,7 @@ const Navbar = () => {
                         </li>
                         {isLoggedIn ?
                             <li className="nav-item">
-                                <a type="button" className="nav-link" onClick={logout}>Logout</a>
+                                <NavLink className="nav-link" to={'/dashboard'}>Dashboard</NavLink>
                             </li> :
                             <li className="nav-item">
                                 <NavLink className="nav-link" to={'/login'}>Login</NavLink>

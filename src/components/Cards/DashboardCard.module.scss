@@ -1,0 +1,27 @@
+.post {
+    img {
+        height: 200px;
+    }
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+
+    img {
+
+        transition: transform 0.3s linear;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+.image {
+    margin-bottom: 10px;
+
+    img {
+        height: 100px;
+    }
+}

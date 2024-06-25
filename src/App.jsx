@@ -7,6 +7,7 @@ import PostEdit from "./pages/PostEdit"
 import PostCreate from "./pages/PostCreate"
 import AuthPage from "./middlewares/AuthPage"
 import Login from "./pages/Login"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
   return (
@@ -52,6 +53,9 @@ function App() {
           <Route path="create" element={<PostCreate />} />
 
         </Route>
+
+        <Route path="dashboard" element={<Dashboard />} />
+
       </Route>
 
     </Routes>
