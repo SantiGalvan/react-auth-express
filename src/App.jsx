@@ -9,6 +9,8 @@ import AuthPage from "./middlewares/AuthPage"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
 import NotFound from "./pages/NotFound"
+import AuthOwner from "./middlewares/AuthOwner"
+import Users from "./pages/Users/Users"
 
 function App() {
   return (
@@ -59,6 +61,13 @@ function App() {
         </Route>
 
         <Route path="dashboard" element={<Dashboard />} />
+
+      </Route>
+
+      {/* Rotte solo dell'Owner */}
+      <Route path="/" element={<AuthOwner><DefaultLayout /></AuthOwner>} >
+
+        <Route path="users" element={<Users />} />
 
       </Route>
 
