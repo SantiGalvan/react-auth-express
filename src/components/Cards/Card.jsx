@@ -57,7 +57,7 @@ const Card = ({ title, content, category, tags, author, slug, image, isShow, onD
 
                     <div className='d-flex justify-content-center gap-3'>
 
-                        {(author?.name == user?.name || user.isOwner) && <>
+                        {(author?.name == user?.name || user?.isOwner) && <>
                             <Link
                                 to={`/posts/${slug}/edit`}
                                 className='btn btn-warning d-flex align-items-center gap-1'>
