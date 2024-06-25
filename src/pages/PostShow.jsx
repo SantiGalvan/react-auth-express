@@ -41,9 +41,10 @@ const PostShow = () => {
                 content={post?.content}
                 category={post?.category}
                 tags={post?.tags}
-                user={post?.user}
+                author={post?.user}
                 slug={post?.slug}
                 image={post?.image}
+
                 onDelete={() => setDeleteMode(true)}
             />
             {deleteMode &&
@@ -51,7 +52,8 @@ const PostShow = () => {
                     isShow={deleteMode}
                     closeModal={() => setDeleteMode(false)}
                     title={post?.title}
-                    user={post?.user?.name}
+                    author={post?.user?.name}
+                    userLogged={user}
                     deleteMode={true}
                     clickDelete={() => { deletePost(post.slug) }}
                 />}

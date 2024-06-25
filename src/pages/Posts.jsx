@@ -36,7 +36,7 @@ const Posts = () => {
                             content={content}
                             category={category}
                             tags={tags}
-                            user={user}
+                            author={user}
                             slug={slug}
                         />
                     </div>
