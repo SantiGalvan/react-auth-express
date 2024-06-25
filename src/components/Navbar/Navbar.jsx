@@ -21,6 +21,13 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to={'/posts'}>Posts</NavLink>
                         </li>
+
+                        {user?.isOwner &&
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to={'/users'}>Users</NavLink>
+                            </li>
+                        }
+
                         {isLoggedIn ?
                             <li className="nav-item">
                                 <NavLink className="nav-link d-flex gap-2" to={'/dashboard'}>
