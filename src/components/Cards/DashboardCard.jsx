@@ -29,44 +29,14 @@ const DashboardCard = ({ user, clickLogout }) => {
                     <div className="col-4 text-center">
                         <div className="row g-4">
 
-                            <div className={user.isAdmin ? 'col-6' : 'col-12 text-center'}>
+                            <div className='col-12 text-center'>
                                 <NavLink className={dashboardCardStyle.link} to={'/posts'}>
-                                    <figure className={user.isAdmin ? dashboardCardStyle.image : dashboardCardStyle.post}>
+                                    <figure className={dashboardCardStyle.post}>
                                         <img src={postsImg} alt="Posts" className='img-fluid' />
                                     </figure>
                                     <h4>Posts</h4>
                                 </NavLink>
                             </div>
-
-                            {user.isAdmin && <>
-                                <div className='col-6'>
-                                    <NavLink className={dashboardCardStyle.link} to={''}>
-                                        <figure className={dashboardCardStyle.image}>
-                                            <img src={categoriesImg} alt="Posts" className='img-fluid' />
-                                        </figure>
-                                        <h4>Categorie</h4>
-                                    </NavLink>
-                                </div>
-
-                                <div className={user.isOwner ? 'col-6' : 'col-12 text-center'}>
-                                    <NavLink className={dashboardCardStyle.link} to={''}>
-                                        <figure className={dashboardCardStyle.image}>
-                                            <img src={tagsImg} alt="Posts" className='img-fluid' />
-                                        </figure>
-                                        <h4>Tags</h4>
-                                    </NavLink>
-                                </div>
-
-                                {user.isOwner &&
-                                    <div className='col-6'>
-                                        <NavLink className={dashboardCardStyle.link} to={'/users'}>
-                                            <figure className={dashboardCardStyle.image}>
-                                                <img src={usersImg} alt="Posts" className='img-fluid' />
-                                            </figure>
-                                            <h4>Users</h4>
-                                        </NavLink>
-                                    </div>}
-                            </>}
 
                         </div>
                     </div>
