@@ -22,6 +22,15 @@ const Navbar = () => {
                             <NavLink className="nav-link" to={'/posts'}>Posts</NavLink>
                         </li>
 
+                        {user?.isAdmin && <>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to={'/categories'}>Categorie</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to={'/tags'}>Tags</NavLink>
+                            </li>
+                        </>}
+
                         {user?.isOwner &&
                             <li className="nav-item">
                                 <NavLink className="nav-link" to={'/users'}>Users</NavLink>

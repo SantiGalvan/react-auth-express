@@ -12,6 +12,9 @@ import NotFound from "./pages/NotFound"
 import AuthOwner from "./middlewares/AuthOwner"
 import Users from "./pages/Users/Users"
 import Register from "./pages/Register"
+import AuthAdmin from "./middlewares/AuthAdmin"
+import Categories from "./pages/Categories"
+import Tags from "./pages/Tags"
 
 function App() {
   return (
@@ -65,6 +68,15 @@ function App() {
         </Route>
 
         <Route path="dashboard" element={<Dashboard />} />
+
+      </Route>
+
+      {/* Rotte per gli admin */}
+      <Route path="/" element={<AuthAdmin><DefaultLayout /></AuthAdmin>} >
+
+        {/* Rotte per le categorie e per i tags */}
+        <Route path="categories" element={<Categories />} />
+        <Route path="tags" element={<Tags />} />
 
       </Route>
 
