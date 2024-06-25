@@ -59,7 +59,7 @@ const DashboardCard = ({ user, clickLogout }) => {
 
                                 {user.isOwner &&
                                     <div className='col-6'>
-                                        <NavLink className={dashboardCardStyle.link} to={''}>
+                                        <NavLink className={dashboardCardStyle.link} to={'/users'}>
                                             <figure className={dashboardCardStyle.image}>
                                                 <img src={usersImg} alt="Posts" className='img-fluid' />
                                             </figure>
