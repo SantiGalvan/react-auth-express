@@ -1,7 +1,7 @@
 import axios from "../utils/axiosClient.js";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Card from "../components/Card/Card";
+import Card from "../components/Cards/Card.jsx";
 import Modal from "../components/Modal/Modal";
 
 const PostShow = () => {

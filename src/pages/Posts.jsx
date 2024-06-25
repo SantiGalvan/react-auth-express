@@ -1,7 +1,7 @@
 import axios from "../utils/axiosClient";
 import { FaPlus } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import Card from "../components/Card/Card";
+import Card from "../components/Cards/Card";
 import { Link } from "react-router-dom";
 
 const Posts = () => {
