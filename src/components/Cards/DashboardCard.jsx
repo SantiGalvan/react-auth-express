@@ -6,13 +6,9 @@ import tagsImg from '../../assets/img/tag.png';
 import usersImg from '../../assets/img/user.png';
 import logoutImg from '../../assets/img/logout.png';
 import dashboardCardStyle from './DashboardCard.module.scss';
-import { useAuth } from '../../contexts/AuthContext';
 
 
-const DashboardCard = ({ user }) => {
-
-    const { logout } = useAuth()
-
+const DashboardCard = ({ user, clickLogout }) => {
     return (
         <div className="card">
             <div className="card-header text-center">
@@ -76,7 +72,7 @@ const DashboardCard = ({ user }) => {
                     </div>
 
                     <div className="col-4 text-center">
-                        <NavLink to={''} onClick={logout} className={dashboardCardStyle.link}>
+                        <NavLink onClick={clickLogout} className={dashboardCardStyle.link}>
                             <figure className={dashboardCardStyle.post}>
                                 <img src={logoutImg} alt="Crea Post" className='img-fluid' />
                             </figure>

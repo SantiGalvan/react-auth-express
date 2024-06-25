@@ -52,6 +52,7 @@ const PostShow = () => {
                     closeModal={() => setDeleteMode(false)}
                     title={post?.title}
                     user={post?.user?.name}
+                    deleteMode={true}
                     clickDelete={() => { deletePost(post.slug) }}
                 />}
         </section>
