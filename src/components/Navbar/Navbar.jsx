@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="w-100 d-flex justify-content-center align-items-center">
+                <div className="container d-flex justify-content-between align-items-center">
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <NavLink className="nav-link" to={'/'}>Home</NavLink>
@@ -27,7 +27,8 @@ const Navbar = () => {
                                 <NavLink className="nav-link" to={'/users'}>Users</NavLink>
                             </li>
                         }
-
+                    </ul>
+                    <ul className="navbar-nav">
                         {isLoggedIn ?
                             <li className="nav-item">
                                 <NavLink className="nav-link d-flex gap-2" to={'/dashboard'}>
@@ -35,14 +36,19 @@ const Navbar = () => {
                                     {user.name}
                                 </NavLink>
                             </li> :
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to={'/login'}>Login</NavLink>
-                            </li>
+                            <>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to={'/login'}>Login</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to={'/register'}>Registrati</NavLink>
+                                </li>
+                            </>
                         }
                     </ul>
                 </div>
             </nav>
-        </header>
+        </header >
     )
 }
 

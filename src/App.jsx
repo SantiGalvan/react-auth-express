@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard"
 import NotFound from "./pages/NotFound"
 import AuthOwner from "./middlewares/AuthOwner"
 import Users from "./pages/Users/Users"
+import Register from "./pages/Register"
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
 
         {/* Rotta Login */}
         <Route path="login" element={<Login />} />
+
+        {/* Rotta Register */}
+        <Route path="register" element={<Register />} />
 
       </Route >
 
