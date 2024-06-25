@@ -5,6 +5,11 @@ const Navbar = () => {
 
     const { isLoggedIn, user } = useAuth();
 
+    const logo = () => {
+        const logo = user.name.split('').filter(l => l !== l.toLowerCase());
+        return logo;
+    }
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -18,7 +23,10 @@ const Navbar = () => {
                         </li>
                         {isLoggedIn ?
                             <li className="nav-item">
-                                <NavLink className="nav-link" to={'/dashboard'}>{user.name}</NavLink>
+                                <NavLink className="nav-link d-flex gap-2" to={'/dashboard'}>
+                                    <span className="logo">{logo()}</span>
+                                    {user.name}
+                                </NavLink>
                             </li> :
                             <li className="nav-item">
                                 <NavLink className="nav-link" to={'/login'}>Login</NavLink>
