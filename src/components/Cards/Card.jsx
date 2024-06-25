@@ -1,8 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from "../../contexts/AuthContext";
 import cardStyle from './Card.module.scss';
 import { FaRegEye, FaTrashAlt, FaArrowLeft, FaPencilAlt } from "react-icons/fa";
 
-const Card = ({ title, content, category, tags, user, slug, image, isShow, onDelete }) => {
+const Card = ({ title, content, category, tags, author, slug, image, isShow, onDelete }) => {
+
+    const { user } = useAuth();
 
     const navigate = useNavigate();
 
@@ -18,7 +21,7 @@ const Card = ({ title, content, category, tags, user, slug, image, isShow, onDel
                     </figure>
                 }
                 <p>{content}</p>
-                <p>{user?.name}</p>
+                <p>{author?.name}</p>
                 <p>
                     <strong>Tags: </strong>
                     {tags?.map(tag => (
@@ -54,16 +57,19 @@ const Card = ({ title, content, category, tags, user, slug, image, isShow, onDel
 
                     <div className='d-flex justify-content-center gap-3'>
 
-                        <Link
-                            to={`/posts/${slug}/edit`}
-                            className='btn btn-warning d-flex align-items-center gap-1'>
-                            <FaPencilAlt />Modifica
-                        </Link >
-                        <button
-                            onClick={onDelete}
-                            className='btn btn-danger d-flex align-items-center gap-1'>
-                            <FaTrashAlt />Elimina
-                        </button>
+                        {(author?.name == user?.name || user.isOwner) && <>
+                            <Link
+                                to={`/posts/${slug}/edit`}
+                                className='btn btn-warning d-flex align-items-center gap-1'>
+                                <FaPencilAlt />Modifica
+                            </Link >
+                            <button
+                                onClick={onDelete}
+                                className='btn btn-danger d-flex align-items-center gap-1'>
+                                <FaTrashAlt />Elimina
+                            </button>
+                        </>}
+
                     </div>
                 </div> :
                 <div className="card-footer d-flex justify-content-center gap-3">
