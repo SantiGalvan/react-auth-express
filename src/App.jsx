@@ -8,6 +8,7 @@ import PostCreate from "./pages/PostCreate"
 import AuthPage from "./middlewares/AuthPage"
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
 
       {/* Rotte pubbliche */}
       <Route path="/" element={<DefaultLayout />}>
+
+        {/* NotFound */}
+        <Route path="*" element={<NotFound />} />
 
         {/* Home */}
         <Route index element={<Home />} />
