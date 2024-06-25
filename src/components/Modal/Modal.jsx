@@ -1,6 +1,6 @@
 import { FaTimes, FaTrashAlt } from "react-icons/fa";
 
-const Modal = ({ isShow, closeModal, title, user, clickDelete, deleteMode, clickLogout }) => {
+const Modal = ({ isShow, closeModal, title, author, clickDelete, deleteMode, clickLogout }) => {
     return (
         <div className="modal" style={isShow ? { display: 'flex' } : ''} tabIndex="-1">
             <div className="modal-dialog">
@@ -11,8 +11,8 @@ const Modal = ({ isShow, closeModal, title, user, clickDelete, deleteMode, click
                     </div>
                     {deleteMode ?
                         <div className="modal-body text-center">
-                            {user ?
-                                <p>Sicuro di voler eliminare <strong>{title}</strong> di <strong>{user}</strong>?</p> :
+                            {author ?
+                                <p>Sicuro di voler eliminare <strong>{title}</strong> di <strong>{author}</strong>?</p> :
                                 <p>Sicuro di voler eliminare <strong>{title}</strong>?</p>
                             }
                         </div> :
