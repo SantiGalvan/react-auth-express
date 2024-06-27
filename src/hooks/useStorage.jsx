@@ -8,7 +8,7 @@ const useStorage = (initialValue, itemKey) => {
         if (itemValue === null) localStorage.setItem(itemKey, JSON.stringify(itemValue));
 
         if (itemValue === null) {
-            return itemValue;
+            return initialValue;
         } else {
             return itemValue === 'undefined' ? undefined : JSON.parse(itemValue);
         }
